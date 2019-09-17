@@ -3,43 +3,61 @@
     <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Signinpage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <title>SignUp</title>
     </head>
     <body>
-        <div class="Box">
-            <div class="user content">
-                <!--For thet text before the Input fields-->
-                <div class="top text">
-                    <span>Team X HNGi6</span><br>
-                    <span>Join us by signing up</span>
+        <div class="main-wrapper">
+            
+            <div class="form-wrapper ">
+                <!--For that text before the Input fields-->
+                <div class="main-header">
+                    <h1 class="team-text">Team X HNGi6</h1>
+                    <h4>Join us by signing up</h4>
                 </div>
-                <!--div and clas for the form-->
-                <div class="fill Box">
-                   <form>
-                       <div class="line1">
-                           <input type="text" name="" class="Name" value="" placeholder="Your Full Name" required>
-                       </div>
-                       <div class="line2">
-                            <input type="text" name="" class="mail" value="" placeholder="Your Email" required>
-                       </div>
-                       <div class="line3">
-                            <input type="text" name="" class="Username" value="" placeholder="Your Username" required>
-                       </div>
-                       <div class="line4">
-                            <input type="text" name="" class="password" value="" minlength="5" placeholder="Your password">
-                       </div>
-                       <div class="signup button">
-                            <button type="button" name="button" class="Signup">SIGN UP</button>
-                    </div>
+                <!--form and clas for the form-->
+                <div class="form-container">
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-default" placeholder="Fullname"
+                                    aria-label="name" aria-describedby="add-text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="email" class="form-control input-default" placeholder="Email"
+                                    aria-label="email" aria-describedby="add-email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-default" placeholder="Username"
+                                    aria-label="username" aria-describedby="add-username" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="password" class="form-control input-default" placeholder="Password"
+                                    aria-label="password" aria-describedby="add-email" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn ">Sign-Up</button>
+                    </form>
                 </div>
-            </form>
-            </div>
-            <div class="btm">
-                <div class="bottom">
-                  Already have an account?<a href="index.html" class=" btm">Sign In</a>  
+                <div class="login-link">
+                    Already have an account? <a href="index.html" class="-">Sign In</a>  
                 </div>
             </div>
         </div>
+        
+
+        <script src="assets/bootstrap/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
