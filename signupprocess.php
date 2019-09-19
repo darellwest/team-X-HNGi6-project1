@@ -11,8 +11,9 @@ if(isset($_POST["sign_up"])){
 		$full_name = validateFormData($_POST["name"]);
 		//checking the name format
 		if(!preg_match("/^[a-zA-Z ]*$/", $full_name)){
-			$name_format_error = "Use only alphabets and whitespaces";
+			$name_error = "Use only alphabets and whitespaces";
 		}
+
 	}
 	
 	if(empty($_POST["username"])){
@@ -22,18 +23,19 @@ if(isset($_POST["sign_up"])){
 		//i am checking if the username followed our required format
 		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username)){
 			$username_error = "wrong username format";
-			echo $username_error;
+			
 		}
 	}
 	
 	 if(empty($_POST["email"])) {
     	$email_error = "Email is required";
     } else {
-    	$email = validateFormData($_POST["email"]);
+		 $email = validateFormData($_POST["email"]);
     	// checking if it is a valid email
     	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       		$email_error = "Invalid email format"; 
     	}
+		 
   	}
 	
 	if(empty($_POST["password"])){
@@ -50,13 +52,13 @@ if(isset($_POST["sign_up"])){
 	
 	if(mysqli_num_rows($result1) > 0){
 		$username_error = "This username has been taken" ;
-		echo"username taken";
+		
 	}else if(mysqli_num_rows($result2) > 0){
 		$email_error = "This email has been taken";
 	}
 	
 	
-		
+		if($fullname && $username && $email && $password){
 		$query = "INSERT INTO team_members (id, full_name, username, email, password, sign_up_date)
 		
 				   VALUES (NULL, '$full_name', '$username', '$email', '$password',  CURRENT_TIMESTAMP)";
@@ -68,7 +70,7 @@ if(isset($_POST["sign_up"])){
 		echo "Errror:" . $query . "<br>" .mysqli_error($conn);
 
 		}
-		
+	}
 	
 
 }

@@ -12,7 +12,7 @@ session_start();
 		die("connection to this database failed: " .mysqli_connect_error());
 	}
 
-	echo "we connected successfully";
+	//echo "we connected successfully";
 
 
 
