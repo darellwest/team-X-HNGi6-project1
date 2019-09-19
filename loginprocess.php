@@ -1,5 +1,5 @@
 <?php 
-
+$username_email = $password = "";
 
 include("functions.php");
 
@@ -18,7 +18,8 @@ if(isset($_POST["login"])){
 		$password = validateFormData($_POST["password"]);
 	}
 	
-	
+			
+
 	$query = "SELECT * FROM team_members WHERE username = '$username_email' || email = '$username_email'";
 	//$query2 = "SELECT * FROM team_members WHERE email = '$email'";
 	
@@ -32,7 +33,6 @@ if(isset($_POST["login"])){
 			$hashedPass		= $rows['password'];	
 			$full_name		= $rows['full_name'];	
 		}
-		
 		if(password_verify($password, $hashedPass)){
 			session_start();
 			$_SESSION["loggedin_user"] = $user;
@@ -44,11 +44,12 @@ if(isset($_POST["login"])){
 		}else{
 			$password_error = "wrong password";
 		}
+	
 		
 	}else{
 		$username_email_error = "wrong username/email";
 	}
-	
+			
 }
 
 

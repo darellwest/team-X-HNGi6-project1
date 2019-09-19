@@ -21,13 +21,14 @@ include("signupprocess.php");
             
             <div class="form-wrapper ">
                 <!--For that text before the Input fields-->
-                <div class="main-header">
-                    <h1 class="team-text">Team X HNGi6</h1>
-                    <h4>Join us by signing up</h4>
-                </div>
+               
                 <!--form and clas for the form-->
                 <div class="form-container">
-                   <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post">
+                   <div class="main-header">
+                    <h1 class="team-text">Team X HNGi6</h1>
+                    <h3>Join us by signing up</h3>
+                </div>
+                   <form class="form" action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post">
                         <div class="form-group">
                            <small style="color:red; font-size:14px"><?php echo $name_error; ?></small>
                             <div class="input-group">
@@ -50,7 +51,7 @@ include("signupprocess.php");
                             </div>
                         </div>
                         <div class="form-group">
-                           <small style="color:red; font-size:14px"><?php echo $password_error; ?></small>
+                           <small style="color:red; font-size:14px; text-align:center;"><?php echo $password_error; ?></small>
                             <div class="input-group">
                                 <input name="password" type="password" class="form-control input-default" placeholder="Your Password"
                                     aria-label="password" aria-describedby="add-email" >
@@ -58,10 +59,11 @@ include("signupprocess.php");
                         </div>
                         <button type="submit" class="btn " name="sign_up">Sign Up</button>
                     </form>
-                </div>
-                <div class="login-link">
+                    <div class="login-link">
                     Already have an account? <a href="index.html" class="-">Sign In</a>  
                 </div>
+                </div>
+                
             </div>
         </div>
         

@@ -55,7 +55,7 @@ include("loginprocess.php");
         margin-bottom: 20px;
         font-family: Roboto;
         font-style: normal;
-        font-weight: normal;
+        font-weight: bold;
         font-size: 18px;
         line-height: 42px;
         display: flex;
