@@ -1,18 +1,24 @@
-<!DOCTYPE <!DOCTYPE html>
+<?php 
+
+include("loginprocess.php");
+?>
+
+
+<!DOCTYPE html>
 	<html>
 	<head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Loginpage</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
     <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <br>
     <style type="text/css">
         body {
             height: 100%;
-            background-image: url("image/background.png");
+            background-image: url("https://res.cloudinary.com/dsvldd9an/image/upload/v1568702234/Business02_aakki7.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -156,22 +162,24 @@
 	<body>    
 	<div class="container">
         <!--took out div form for content-for-user and started with form-->
-            <form action=" " method="post">
+             <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post">
  <!--This is for the avatar node-->
-                    <div class="profilepic_container"><img src="image/avi3.png" class="material-icons"> </img></div>
+                    <div class="profilepic_container"><img src="https://res.cloudinary.com/dsvldd9an/image/upload/v1568731147/avating_meyd6h.png"> </img></div>
                     <!--span changed to h4-->
                     <h4 class="modal-title">Team X HNGi6</h4>
                     <h3 class="modal-title">Sign in to Continue</h3>
 
                     <div class="form_container input-field1">
-                        <input type="text" class="form-control input_user" value="" placeholder="Your Username or email" required="required">
+                       	<small style="color:red; font-size:14px"><?php echo $username_email_error?></small>
+                        <input name="username_email"type="text" class="form-control input_user"  placeholder="Your Username or email" >
                     </div>
     
                     <div class="form_container input-field2">
-                        <input type="password" class="form-control input_pass" value="" minlength="5" placeholder="Your password" required="required">
+                       <small style="color:red; font-size:14px"><?php echo $password_error?></small>
+                        <input name="password" type="password" class="form-control input_pass" minlength="5" placeholder="Your password">
                     </div>
                     <div class="signin_button">
-                    <button type="button" name="button" class="btn btn-primary btn-block btn-lg">SIGN IN</button>
+                    <button type="submit" name="login" class="btn btn-primary btn-block btn-lg">SIGN IN</button>
                     </div> <br>
                     <!--This is a group in the form for the remember me and the check box-->
                     <div class="form-group small clearfix">

@@ -1,3 +1,8 @@
+<?php
+include("signupprocess.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,32 +27,32 @@
                 </div>
                 <!--form and clas for the form-->
                 <div class="form-container">
-                    <form>
+                   <form action="<?php echo htmlspecialchars( $_SERVER["PHP_SELF"] ); ?>" method="post">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control input-default" placeholder="Your Full Name"
-                                    aria-label="name" aria-describedby="add-text" required>
+                                <input name="name" type="text" class="form-control input-default" placeholder="Your Full Name"
+                                    aria-label="name" aria-describedby="add-text">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="email" class="form-control input-default" placeholder="Your Email"
-                                    aria-label="email" aria-describedby="add-email" required>
+                                <input name="email" type="email" class="form-control input-default" placeholder="Your Email"
+                                    aria-label="email" aria-describedby="add-email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control input-default" placeholder="your Username"
-                                    aria-label="username" aria-describedby="add-username" required>
+                                <input name="username" type="text" class="form-control input-default" placeholder="your Username"
+                                    aria-label="username" aria-describedby="add-username" >
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="password" class="form-control input-default" placeholder="Your Password"
-                                    aria-label="password" aria-describedby="add-email" required>
+                                <input name="password" type="password" class="form-control input-default" placeholder="Your Password"
+                                    aria-label="password" aria-describedby="add-email" >
                             </div>
                         </div>
-                        <button type="submit" class="btn ">Sign Up</button>
+                        <button type="submit" class="btn " name="sign_up">Sign Up</button>
                     </form>
                 </div>
                 <div class="login-link">
