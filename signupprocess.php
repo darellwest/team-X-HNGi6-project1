@@ -26,7 +26,7 @@ if(isset($_POST["sign_up"])){
 	
 		
 		//i am checking if the username followed our required format
-		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username) && $username_check){
+		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username_check) && $username_check){
 			$username_error = "wrong username format";
 			$username_error1 = "Format for username";
 			$username_error2 = "only number, aphabet and underscore allowed";
@@ -41,7 +41,7 @@ if(isset($_POST["sign_up"])){
 	  
 		 
     	// checking if it is a valid email
-    	if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $email_check) {
+    	if(!filter_var($email_check, FILTER_VALIDATE_EMAIL) && $email_check) {
       		$email_error = "Invalid email format"; 
     	}if(empty($email_check)) {
     	$email_error = "Email is required";
@@ -75,7 +75,7 @@ if(isset($_POST["sign_up"])){
 				   VALUES (NULL, '$full_name', '$username', '$email', '$password',  CURRENT_TIMESTAMP)";
 		
 		if(mysqli_query($conn, $query)){
-			$success= "Thanks for joining our team";
+			$success= "Thanks for joining our team login <a href ='index.php'>HERE</a>";
 		}else{
 			
 		echo "Errror:" . $query . "<br>" .mysqli_error($conn);
