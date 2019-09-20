@@ -5,7 +5,7 @@ include("functions.php");
 //SIGN UP PROCESS
 if(isset($_POST["sign_up"])){
 	
-		$full_name_check = validateFormData($_POST["name"]);
+	$full_name_check = validateFormData($_POST["name"]);
 		 
 		$username_check = validateFormData($_POST["username"]);
 		
@@ -69,7 +69,7 @@ if(isset($_POST["sign_up"])){
 	}
 	
 	
-		if($full_name && $username && $email && $password){
+		if($full_name && $username && $email && $password && mysqli_num_rows($result1) < 1 && mysqli_num_rows($result2) < 1 ){
 		$query = "INSERT INTO team_members (id, full_name, username, email, password, sign_up_date)
 		
 				   VALUES (NULL, '$full_name', '$username', '$email', '$password',  CURRENT_TIMESTAMP)";
@@ -86,7 +86,6 @@ if(isset($_POST["sign_up"])){
 
 }
 
-mysqli_close($conn);
 
 
 //LOGIN PROCESS
