@@ -184,10 +184,10 @@ include("loginprocess.php");
                     <!--This is a group in the form for the remember me and the check box-->
                     <div class="form-group small clearfix">
                         <label class="checkbox-inline"><input type="checkbox" id="rememberme_check"> Remember me</label>
-                        <a href="teamXforgotpassword page.html" class="forgot-link">Forgot Password?</a>
+                        <a href="forgotpassword.php" class="forgot-link">Forgot Password?</a>
                     </div> 
                     
-                    <div class="text-center small footer">Don't have an account? <a href="#" class="bottom_signup">Sign up</a></div>
+                    <div class="text-center small footer">Don't have an account? <a href="signup.php" class="bottom_signup">Sign up</a></div>
                     
 	
 </form>
