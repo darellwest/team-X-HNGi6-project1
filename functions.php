@@ -25,4 +25,26 @@ session_start();
 	return $data;
 }
 
+
+function mytoken($token = 10){
+	$token = "k346vbmzx5780f01asdkhlkiutyroepwqplkjhgfds36vxmc";
+	$token = str_shuffle($token);
+	$token = substr($token, 0, 12);
+	
+	return $token;
+}
+
+
+function redirectToPass(){
+	header("Location: forgotpassword.php");
+	exit();
+}
+
+
+function redirectToLogin(){
+	header("Location: login.php");
+	exit();
+}
+
+
 ?>

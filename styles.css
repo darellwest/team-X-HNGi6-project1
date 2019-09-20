@@ -1,29 +1,24 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing:border-box
+    box-sizing:border-box;
 }
-.container{
+body{
 background:url("./Business02.png") no-repeat center center / cover;
 width: 1920px;
-position: relative;
-height: 1074px;
-left: 0px;
-top: 6px;
 }
 .form-container{
     position: absolute; 
     width: 380px;
     height: 450px;
-    left: 200px;
     top: 95px;
+	left: 100px;
+	right: 100px;
     background: #DDDDDD;
     box-shadow: 2px 4px 20px rgba(71, 7, 251, 0.93);
     border-radius: 6px;
     justify-content: center;
     align-items: center;
-    padding: 3% 0% 10% 0%;
-    margin: 0% 30% 0% 30%;
 }
 .form-container span {
 font-family: Roboto;

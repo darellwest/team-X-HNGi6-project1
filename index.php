@@ -1,5 +1,5 @@
 <?php 
-
+$username_email =
 include("loginprocess.php");
 ?>
 
@@ -55,7 +55,7 @@ include("loginprocess.php");
         margin-bottom: 20px;
         font-family: Roboto;
         font-style: normal;
-        font-weight: bold;
+        font-weight: normal;
         font-size: 18px;
         line-height: 42px;
         display: flex;

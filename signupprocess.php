@@ -23,7 +23,10 @@ if(isset($_POST["sign_up"])){
 		//i am checking if the username followed our required format
 		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username)){
 			$username_error = "wrong username format";
-			
+			$username_error1 = "Format for username";
+			$username_error2 = "only number, aphabet and underscore allowed";
+			$username_error3 = "you must start with at least an alphabet";
+			$username_error4 = "You must not use underscore at begining or end";
 		}
 	}
 	
@@ -58,13 +61,13 @@ if(isset($_POST["sign_up"])){
 	}
 	
 	
-		if($fullname && $username && $email && $password){
+		if($full_name && $username && $email && $password){
 		$query = "INSERT INTO team_members (id, full_name, username, email, password, sign_up_date)
 		
 				   VALUES (NULL, '$full_name', '$username', '$email', '$password',  CURRENT_TIMESTAMP)";
 		
 		if(mysqli_query($conn, $query)){
-			echo "<br>one entry recored";
+			$success= "Thanks for joining our team";
 		}else{
 			
 		echo "Errror:" . $query . "<br>" .mysqli_error($conn);
