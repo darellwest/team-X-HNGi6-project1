@@ -5,40 +5,48 @@ include("functions.php");
 //SIGN UP PROCESS
 if(isset($_POST["sign_up"])){
 	
-	if(empty($_POST["name"])){
+		$full_name_check = validateFormData($_POST["name"]);
+		 
+		$username_check = validateFormData($_POST["username"]);
+		
+		$email_check = validateFormData($_POST["email"]);
+		
+		//checking the name format
+		if(!preg_match("/^[a-zA-Z ]*$/", $full_name_check) && $full_name_check){
+			$name_error = "Use only alphabets and whitespaces";
+		} else if(empty($full_name_check)){
 		$name_error = "You can't leave this field empty";
 	}else{
 		$full_name = validateFormData($_POST["name"]);
-		//checking the name format
-		if(!preg_match("/^[a-zA-Z ]*$/", $full_name)){
-			$name_error = "Use only alphabets and whitespaces";
-		}
-
 	}
 	
-	if(empty($_POST["username"])){
-		$username_error = "You can't leave this field empty";
-	}else{
-		$username = validateFormData($_POST["username"]);
+	
+	
+	
+	
+		
 		//i am checking if the username followed our required format
-		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username)){
+		if(!preg_match("/^[A-Za-z][A-Za-z0-9]*.[A-Za-z0-9]*$/", $username) && $username_check){
 			$username_error = "wrong username format";
 			$username_error1 = "Format for username";
 			$username_error2 = "only number, aphabet and underscore allowed";
 			$username_error3 = "you must start with at least an alphabet";
 			$username_error4 = "You must not use underscore at begining or end";
-		}
+		}else if(empty($username_check)){
+		$username_error = "You can't leave this field empty";
+	}else{
+		$username = validateFormData($_POST["username"]);
 	}
 	
-	 if(empty($_POST["email"])) {
-    	$email_error = "Email is required";
-    } else {
-		 $email = validateFormData($_POST["email"]);
-    	// checking if it is a valid email
-    	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      		$email_error = "Invalid email format"; 
-    	}
+	  
 		 
+    	// checking if it is a valid email
+    	if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $email_check) {
+      		$email_error = "Invalid email format"; 
+    	}if(empty($email_check)) {
+    	$email_error = "Email is required";
+    }else {
+		 $email = validateFormData($_POST["email"]);
   	}
 	
 	if(empty($_POST["password"])){
@@ -78,6 +86,7 @@ if(isset($_POST["sign_up"])){
 
 }
 
+mysqli_close($conn);
 
 
 //LOGIN PROCESS
