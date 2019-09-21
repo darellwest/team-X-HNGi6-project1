@@ -12,7 +12,7 @@ if(isset($_POST["sign_up"])){
 		$email_check = validateFormData($_POST["email"]);
 		
 		//checking the name format
-		if(!preg_match("/^[a-zA-Z ]*$/", $full_name_check) && $full_name_check){
+		if(!preg_match("/^[a-zA-Z ]$/", $full_name_check) && $full_name_check){
 			$name_error = "Use only alphabets and whitespaces";
 		} else if(empty($full_name_check)){
 		$name_error = "You can't leave this field empty";
